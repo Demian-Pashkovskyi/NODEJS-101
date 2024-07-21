@@ -2,10 +2,10 @@ import expess from 'express';
 
 const app = expess();
 
-app.get('/', (request, response) => {
-	console.log('Method:', request.method);
-	console.log('URL:', request.url);
-	response.send('Hello Word and Node js');
+app.get('/', (req, res) => {
+	console.log('Method:', req.method);
+	console.log('URL:', req.url);
+	res.send('Hello Word and Node js ===>');
 })
 
 app.listen(8080, () => {

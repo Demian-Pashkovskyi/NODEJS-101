@@ -1,19 +1,21 @@
 {
-  "name": "01-express",
+  "name": "02-middlewares",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-		"dev": "nodemon server.js",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pino": "^9.3.1",
+    "pino-http": "^10.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
-  }
+  },
+  "description": ""
 }
