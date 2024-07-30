@@ -2,7 +2,7 @@
   "name": "02-mongodb",
   "version": "1.0.0",
   "main": "index.js",
-	"type": "module",
+  "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.5.1"
   },
