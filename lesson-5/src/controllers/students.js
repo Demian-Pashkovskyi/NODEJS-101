@@ -1,3 +1,5 @@
+import createHttpError from "http-errors";
+
 import {Student} from "../models/student.js";
 
 async function getStudents(req, res) {
@@ -7,18 +9,20 @@ async function getStudents(req, res) {
   res.send(students);
 };
 
-async function getStudentBuId (req, res) {
+async function getStudentBuId (req, res, next) {
 	const { studentId } = req.params;
 	
 	const user = await Student.findById(studentId);
 	console.log(user);
 	
 	if (user === null) {
-		return res.status(404).send({ status: 404, message: "User not found"});
+		// return next(new Error("Student note found"));
+
+		return next(createHttpError(404, "Student note found"));
 	}
 	
-		res.send({ status: 200, data: user });
+	res.send({ status: 200, data: user });
 }
 
-
 export { getStudents, getStudentBuId };
+

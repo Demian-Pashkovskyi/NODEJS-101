@@ -1,19 +1,15 @@
-import express from "express";
+import express from 'express';
 
-import studentRoutes from "./routes/students.js";
+import studentRoutes from './routes/students.js';
+
+import { errorHandler } from './middlewares/errorHandler.js';
+import { notFoundHandler } from './middlewares/notFoundHandler.js';
 
 const app = express();
 
 app.use(studentRoutes);
 
-app.use((req, res, next) => {
-	res.status(404).send({message: "Route not found!"});
-});
-
-app.use((error, req, res, next) => {
-	
-	console.error(error);
-	res.status(500).send({message: "Internal server error!"});
-});
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 export default app;
