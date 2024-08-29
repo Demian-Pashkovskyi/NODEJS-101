@@ -6,6 +6,7 @@ import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 
 const app = express();
+// app.use(express.json());
 
 app.use(studentRoutes);
 
